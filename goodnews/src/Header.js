@@ -9,16 +9,16 @@ function Header() {
                 <h2>GOOD NEWS TODAY</h2>
                 <div> <SentimentVerySatisfiedIcon className="header__logo" /></div>
             </div>
-            <div className="header__nav">
+            {/* <div className="header__nav">
                 <div className="header__option">
-                    Sign In
+                    <button>Sign In</button>
                 </div>
 
                 <div className="header__option">
-                    Sign Up
+                    <button>Sign Up</button>
                 </div>
 
-            </div>
+            </div> */}
         </div >
     )
 }
