@@ -23,7 +23,7 @@ function App() {
 
       <Provider store={store}>
         <Container maxWidth="lg">
-          <TLists />
+          <NLists />
         </Container>
       </Provider>
       <Footer />
