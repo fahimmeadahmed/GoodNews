@@ -25,6 +25,9 @@ function App() {
         <Container maxWidth="lg">
           <NLists />
         </Container>
+        <Container maxWidth="lg">
+          <TLists />
+        </Container>
       </Provider>
       <Footer />
     </div>

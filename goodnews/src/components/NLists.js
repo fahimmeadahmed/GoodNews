@@ -36,6 +36,7 @@ const NLists = ({ classes, ...props }) => {
                                 <TableRow>
                                     <TableCell>Title</TableCell>
                                     <TableCell>Description</TableCell>
+                                    <TableCell>Date</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -47,6 +48,9 @@ const NLists = ({ classes, ...props }) => {
                                             </TableCell>
                                             <TableCell>
                                                 {record.description}
+                                            </TableCell>
+                                            <TableCell>
+                                                {record.date}
                                             </TableCell>
                                         </TableRow>)
                                     })
