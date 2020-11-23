@@ -9,28 +9,38 @@ import NLists from './components/NLists'
 import { Container } from '@material-ui/core'
 import Footer from './Footer'
 import TLists from './components/TLists'
-
-
+import { BrowserRouter as Router } from 'react-router-dom';
+import Route from 'react-router-dom/Route';
+import Routes from './Routes'
 
 // import 'react-datepicker/dist/react-datepicker.css'
 function App() {
   return (
-    <div className='App'>
-      <Header />
-      <Calendar />
+    <Router>
+      <div className='App'>
+        <Header />
+        <Calendar />
+        <br />
+        <Provider store={store}>
+          {/* <Container maxWidth="lg">
+            <TLists />
+          </Container> */}
+          <Routes></Routes>
+          {/* <Container maxWidth="lg">
+            <NLists />
+          </Container> */}
+          {/* <Container maxWidth="lg">
+            <Route path="/details" exact render={
+              () => {
+                return (<NLists />)
+              }
+            } />
+          </Container> */}
 
-      <br />
-
-      <Provider store={store}>
-        <Container maxWidth="lg">
-          <NLists />
-        </Container>
-        <Container maxWidth="lg">
-          <TLists />
-        </Container>
-      </Provider>
-      <Footer />
-    </div>
+        </Provider>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 export default App;

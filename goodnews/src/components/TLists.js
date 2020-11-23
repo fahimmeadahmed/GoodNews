@@ -1,6 +1,7 @@
 import { Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, withStyles } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import * as actions from "../actions/nList";
 import NListForm from "./NListForm";
 
@@ -43,6 +44,10 @@ const TLists = ({ classes, ...props }) => {
                                         return (<TableRow key={index} hover>
                                             <TableCell>
                                                 {record.title}
+                                                <br></br>
+                                                <Link to={"/details"}>
+                                                    <button>Details</button> </Link>
+                                                {/* <a href="/details">Details</a> */}
                                             </TableCell>
                                         </TableRow>)
                                     })

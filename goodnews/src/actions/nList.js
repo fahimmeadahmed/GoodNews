@@ -4,13 +4,28 @@ export const ACTION_TYPES = {
     CREATE: 'CREATE',
     UPDATE: 'UPDATE',
     DELETE: 'DELETE',
-    FETCH_ALL: 'FETCH_ALL'
+    FETCH_ALL: 'FETCH_ALL',
+    FETCH_BY_ID: 'FETCH_BY_ID'
 }
 
 // const formateData = data => ({
 //     ...data,
 //     age: parseInt(data.age ? data.age : 0)
 // })
+
+export const fetchById = (id) => dispatch => {
+    api.nList().fetchById(2)
+        .then(response => {
+            console.log(response)
+            dispatch({
+                type: ACTION_TYPES.FETCH_BY_ID,
+                payload: response.data
+                // payload: { id, ...data }
+            })
+            // onSuccess()
+        })
+        .catch(err => console.log(err))
+}
 
 export const fetchAll = () => dispatch => {
     api.nList().fetchAll()

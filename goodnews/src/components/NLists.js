@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions/nList";
 import NListForm from "./NListForm";
+import api from "../actions/api";
 
 const styles = theme => ({
     root: {
@@ -34,7 +35,7 @@ const NLists = ({ classes, ...props }) => {
                         <Table>
                             <TableHead className={classes.root}>
                                 <TableRow>
-                                    <TableCell>Title</TableCell>
+                                    {/* <TableCell>Title</TableCell> */}
                                     <TableCell>Description</TableCell>
                                     <TableCell>Date</TableCell>
                                 </TableRow>
@@ -43,9 +44,9 @@ const NLists = ({ classes, ...props }) => {
                                 {
                                     props.nListList.map((record, index) => {
                                         return (<TableRow key={index} hover>
-                                            <TableCell>
+                                            {/* <TableCell>
                                                 {record.title}
-                                            </TableCell>
+                                            </TableCell> */}
                                             <TableCell>
                                                 {record.description}
                                             </TableCell>
@@ -67,6 +68,6 @@ const mapStateToProps = state => ({
     nListList: state.nList.list
 })
 const mapActionToProps = {
-    fetchAllNLists: actions.fetchAll
+    fetchAllNLists: actions.fetchById
 }
 export default connect(mapStateToProps, mapActionToProps)(withStyles(styles)(NLists));

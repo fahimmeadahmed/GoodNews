@@ -10,6 +10,11 @@ export const nList = (state = initialState, action) => {
                 ...state,
                 list: [...action.payload]
             }
+        case ACTION_TYPES.FETCH_BY_ID:
+            return {
+                ...state,
+                list: [...action.payload]
+            }
         default:
             return state
     }
